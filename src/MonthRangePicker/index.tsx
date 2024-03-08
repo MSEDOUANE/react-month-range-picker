@@ -25,11 +25,11 @@ export const MonthRangePicker: React.FC<MonthRangePickerProps> = ({
   const isLastYear = currentYear + yearOffset + 1 > currentYear
 
   const isMonthSelected = (month: Date) => {
-    if (!startMonth || !endMonth) {
+    if (!startMonth) {
       return false
     }
     const startYearMonth = startMonth.getFullYear() * 12 + startMonth.getMonth()
-    const endYearMonth = endMonth.getFullYear() * 12 + endMonth.getMonth()
+    const endYearMonth = endMonth?.getFullYear() * 12 + endMonth?.getMonth()
     const currentYearMonth = month.getFullYear() * 12 + month.getMonth()
 
     return (
